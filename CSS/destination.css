@@ -1,0 +1,214 @@
+.destination{
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-bottom: clamp(2em,10vh,6em);
+}
+.planet{
+    position: relative;
+}
+.planet img{
+    width: clamp(14em,30vw,25em);
+    transform: scale(0.2) translateX(-50%);
+    display: none;
+}
+.planet img.show{
+    display: block;
+}
+.planet img.show-trans{
+    transform: scale(1) translate(0);
+    transition: all 1s ease;
+}
+.destination > p{
+    font-family: var(--link-small-text--font-family);
+    width: 100%;
+    text-align: left;
+    font-size: clamp(1.3em,2vw,6em);
+    word-spacing: 8px;
+    padding-bottom: 2em;
+}
+.destination p span {
+    margin-right: 0.5em;
+    font-weight: 100;
+    color: grey;
+}
+.overall{
+    display: flex;
+    width: 100%;
+    max-width: 80em;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+.overall p:first-of-type{
+    font-family: var(--big--font--family);
+    font-size: clamp(3em,7vw,5em);
+    letter-spacing: 9px;
+    margin: 0.2em 0;
+    color: var(--white);
+}
+.overall p{
+    width: 90%;
+    max-width: 25em;
+}
+.overall p:last-of-type{
+    letter-spacing: 2px;
+    font-family: var(--para--font--family);
+    line-height: 1.5em;
+    font-size: clamp(0.8em,1vw,2.3em);
+    color: var(--text--color);
+}
+.hr{
+    width: 90%;
+    height: 1px;
+    max-width: 22em;
+    margin-block: min(3vh,3em) 1.4em;
+    background: rgba(128, 128, 128, 0.314);
+}
+.planet--info{
+    display: flex;
+    width: 90%;
+    max-width: 35em;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.planet-nav{
+    list-style: none;
+    height: 2vh;
+    min-height: 2em;
+    margin-bottom: 0.5em;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: var(--link-small-text--font-family);
+    position: relative;
+}
+.planet-nav li{
+    display: inline-block;
+    font-weight: 100;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+.planet-nav li::after{
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    content: "";
+    bottom: -2%;
+    background: var(--text--color);
+    transition: all 0.2s ease;
+}
+.planet-nav li:hover::after{
+    width: 100%;
+}
+.planet-nav li:not(.planet-nav li:last-of-type){
+    margin-right: clamp(0.7em,6vw,4em);
+}
+.more--info{
+    width: 90%;
+    max-width: 24em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.attribute{
+    display: flex;
+    flex-direction: column;
+}
+.attribute p{
+    width: 100%;
+}
+.attribute p:first-child{
+    font-family: var(--link-small-text--font-family);
+    font-weight: 200;
+    font-size: clamp(0.6em,1.2vw,2em);
+    word-spacing: 3px;
+    letter-spacing: 2px;
+    color: var(--text--color);
+}
+.attribute p:last-child{
+    font-family: var(--big--font--family);
+    font-size: clamp(1.3em,2vw,3.2em);
+}
+@media screen and (max-width: 1456px){
+    .destination > p{
+        margin-left: 4em;
+    }
+    .planet--info{
+        max-width: 30em;
+    }
+}
+@media screen and (max-width: 800px){
+    .destination{
+        flex-direction: column;
+        justify-content: space-between;
+        padding-bottom: clamp(1em,5vh,4em);
+        height: 85%;
+    }
+    .destination > p{
+        padding: 1.5em 0;
+    }
+    .planet img{
+        margin-bottom: 1.4em;
+    }
+    .overall{
+        height: 90%;
+        align-items: center;
+        text-align: center;
+    }
+    .planet-nav{
+        justify-content: center;
+    }
+    .planet--info{
+        align-items: center;
+    }
+    .planet{
+        margin: 0;
+    }
+    .overall p{
+        max-width: 35em;
+    }
+}
+@media screen and (max-width: 520px){
+    .destination{
+        align-items: center;
+    }
+    .destination > p{
+        margin: 0;
+        width: fit-content;
+        letter-spacing: 4px;
+        padding: 1.5em 0;
+    }
+    .more--info{
+        flex-direction: column;
+        margin-bottom: 1em;
+    }
+    .attribute:last-of-type{
+        margin-top: 1.5em;
+    }
+    .attribute p:first-child{
+        font-family: var(--link-small-text--font-family);
+        font-weight: 200;
+        font-size: clamp(1em,1.2vw,2.4em);
+        word-spacing: 3px;
+        letter-spacing: 2px;
+        color: var(--text--color);
+    }
+    .attribute p:last-child{
+        font-family: var(--big--font--family);
+        font-size: clamp(2em,3vw,4em);
+    }
+    nav .planet--line{
+        display: none;
+    }
+    /* section:has(.destination){
+        height:120vh;
+    } */
+}
+/* @media screen and (max-width: 480px){
+    
+} */
